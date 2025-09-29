@@ -54,23 +54,43 @@ export const ChartSection = () => {
             </div>
           ))}
           
-          {/* Line chart following the red line path */}
-          <svg 
-            className="absolute inset-0 w-full h-full pointer-events-none" 
-            viewBox="0 0 100 100"
-            fill="none"
-          >
-            {/* Curved line following the red line path from bottom-left to top-right */}
-            <path
-              d="M 10 85 Q 40 75 60 45 Q 75 25 90 15"
-              stroke="#0ea5e9"
-              strokeWidth="3"
-              fill="none"
-              className="transition-all duration-1000 ease-out animate-fade-in"
+          {/* Line chart using CSS */}
+          <div className="absolute inset-0 w-full h-full pointer-events-none">
+            {/* Data points positioned to align with bars */}
+            <div className="absolute w-3 h-3 bg-red-500 rounded-full animate-scale-in" style={{ left: '10%', bottom: '15%' }} />
+            <div className="absolute w-3 h-3 bg-red-500 rounded-full animate-scale-in" style={{ left: '40%', bottom: '25%' }} />
+            <div className="absolute w-3 h-3 bg-red-500 rounded-full animate-scale-in" style={{ left: '60%', bottom: '55%' }} />
+            <div className="absolute w-3 h-3 bg-red-500 rounded-full animate-scale-in" style={{ left: '90%', bottom: '85%' }} />
+            
+            {/* Line segments connecting the points */}
+            <div 
+              className="absolute border-t-2 border-red-500 origin-left animate-fade-in"
+              style={{ 
+                left: '10%', 
+                bottom: '15%', 
+                width: '32%', 
+                transform: 'rotate(8deg) translateY(-1px)'
+              }}
             />
-            {/* End point circle */}
-            <circle cx="90" cy="15" r="3" fill="#0ea5e9" className="animate-scale-in" />
-          </svg>
+            <div 
+              className="absolute border-t-2 border-red-500 origin-left animate-fade-in"
+              style={{ 
+                left: '40%', 
+                bottom: '25%', 
+                width: '25%', 
+                transform: 'rotate(35deg) translateY(-1px)'
+              }}
+            />
+            <div 
+              className="absolute border-t-2 border-red-500 origin-left animate-fade-in"
+              style={{ 
+                left: '60%', 
+                bottom: '55%', 
+                width: '36%', 
+                transform: 'rotate(25deg) translateY(-1px)'
+              }}
+            />
+          </div>
         </div>
 
         {/* Gap Closure rate label */}
