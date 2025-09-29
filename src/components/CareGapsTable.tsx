@@ -62,14 +62,28 @@ export const CareGapsTable = () => {
 
         {/* Performance metrics table */}
         <div className="mt-8">
-          <table className="w-full">
+          <table className="w-full table-fixed">
+            <colgroup>
+              <col className="w-1/4" />
+              <col className="w-1/4" />
+              <col className="w-1/4" />
+              <col className="w-1/4" />
+            </colgroup>
+            <thead>
+              <tr>
+                <th className="text-left p-4 text-sm font-medium text-muted-foreground">HealAAgeluJB%</th>
+                <th className="text-left p-4 text-sm font-medium text-muted-foreground">HIA</th>
+                <th className="text-left p-4 text-sm font-medium text-muted-foreground">Heterals</th>
+                <th className="text-left p-4 text-sm font-medium text-muted-foreground">Comp %</th>
+              </tr>
+            </thead>
             <tbody>
               {performanceData.map((row, index) => (
-                <tr key={index} className="border-t border-border">
-                  <td className="p-3 text-sm font-semibold text-foreground">{row.metric1}</td>
-                  <td className="p-3 text-sm font-semibold text-foreground">{row.metric2}</td>
-                  <td className="p-3 text-sm font-semibold text-foreground">{row.metric3}</td>
-                  <td className="p-3 text-sm font-semibold text-foreground">{row.metric4}</td>
+                <tr key={index} className="h-12">
+                  <td className="p-4 text-sm font-semibold text-foreground">{row.metric1}</td>
+                  <td className="p-4 text-sm font-semibold text-foreground">{row.metric2}</td>
+                  <td className="p-4 text-sm font-semibold text-foreground">{row.metric3}</td>
+                  <td className="p-4 text-sm font-semibold text-foreground">{row.metric4}</td>
                 </tr>
               ))}
             </tbody>
@@ -78,25 +92,28 @@ export const CareGapsTable = () => {
 
         {/* Bottom metrics */}
         <div className="mt-4">
-          <div className="text-sm text-muted-foreground mb-2">
-            <span className="inline-block w-20">HealAAgeluJB%</span>
-            <span className="inline-block w-20 ml-12">HIA</span>
-            <span className="inline-block w-20 ml-12">Heterals</span>
-          </div>
-          <div className="text-sm text-muted-foreground mb-2">
-            <span className="inline-block w-20">(MR) c%</span>
-            <span className="inline-block w-20 ml-12">CAP</span>
-            <span className="inline-block w-20 ml-12">RFR%</span>
-            <span className="inline-block w-20 ml-12">Comp %</span>
-          </div>
-          <table className="w-full">
+          <table className="w-full table-fixed">
+            <colgroup>
+              <col className="w-1/4" />
+              <col className="w-1/4" />
+              <col className="w-1/4" />
+              <col className="w-1/4" />
+            </colgroup>
+            <thead>
+              <tr>
+                <th className="text-left p-4 text-sm font-medium text-muted-foreground">(MR) c%</th>
+                <th className="text-left p-4 text-sm font-medium text-muted-foreground">CAP</th>
+                <th className="text-left p-4 text-sm font-medium text-muted-foreground">RFR%</th>
+                <th className="text-left p-4 text-sm font-medium text-muted-foreground">Comp %</th>
+              </tr>
+            </thead>
             <tbody>
               {bottomData.map((row, index) => (
-                <tr key={index} className="border-t border-border">
-                  <td className="p-3 text-sm font-semibold text-foreground">{row.metric1}</td>
-                  <td className="p-3 text-sm font-semibold text-foreground">{row.metric2}</td>
-                  <td className="p-3 text-sm font-semibold text-foreground">{row.metric3}</td>
-                  <td className="p-3 text-sm font-semibold text-foreground">{row.metric4}</td>
+                <tr key={index} className="h-12">
+                  <td className="p-4 text-sm font-semibold text-foreground">{row.metric1}</td>
+                  <td className="p-4 text-sm font-semibold text-foreground">{row.metric2}</td>
+                  <td className="p-4 text-sm font-semibold text-foreground">{row.metric3}</td>
+                  <td className="p-4 text-sm font-semibold text-foreground">{row.metric4}</td>
                 </tr>
               ))}
             </tbody>
