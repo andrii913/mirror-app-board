@@ -54,25 +54,22 @@ export const ChartSection = () => {
             </div>
           ))}
           
-          {/* Line chart overlaid on status bars */}
+          {/* Line chart positioned to the right side */}
           <svg 
-            className="absolute inset-0 w-full h-full pointer-events-none" 
-            viewBox="0 0 100 100"
+            className="absolute top-0 right-0 w-32 h-full pointer-events-none" 
+            viewBox="0 0 80 100"
             fill="none"
           >
-            {/* Line connecting the end points of each status bar */}
+            {/* Curved line chart positioned to the right */}
             <path
-              d="M 75 12.5 L 55 37.5 L 35 62.5 L 25 87.5"
-              stroke="#1e40af"
-              strokeWidth="2"
+              d="M 20 85 Q 35 75 45 60 Q 55 45 65 25"
+              stroke="#0ea5e9"
+              strokeWidth="3"
               fill="none"
               className="transition-all duration-1000 ease-out animate-fade-in"
             />
-            {/* Points at each bar end */}
-            <circle cx="75" cy="12.5" r="2" fill="#1e40af" className="animate-scale-in" />
-            <circle cx="55" cy="37.5" r="2" fill="#1e40af" className="animate-scale-in" />
-            <circle cx="35" cy="62.5" r="2" fill="#1e40af" className="animate-scale-in" />
-            <circle cx="25" cy="87.5" r="2" fill="#1e40af" className="animate-scale-in" />
+            {/* End point circle */}
+            <circle cx="65" cy="25" r="3" fill="#0ea5e9" className="animate-scale-in" />
           </svg>
         </div>
 
