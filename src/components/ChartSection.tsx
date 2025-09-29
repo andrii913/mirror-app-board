@@ -1,8 +1,8 @@
 export const ChartSection = () => {
   const diseaseData = [
-    { name: "Diabetes", value: 85, color: "bg-primary" },
-    { name: "CKD", value: 60, color: "bg-primary-light" },
-    { name: "CKD", value: 35, color: "bg-primary-lighter" }
+    { name: "Diabetes", value: 85, color: "bg-blue-500" },
+    { name: "CKD", value: 60, color: "bg-blue-500" },
+    { name: "CKD", value: 35, color: "bg-blue-500" }
   ];
 
   const gapTypeData = [
@@ -20,13 +20,13 @@ export const ChartSection = () => {
           Care Gaps Closed<br />by Disease Group
         </h3>
         
-        <div className="space-y-4">
+        <div className="space-y-6">
           {diseaseData.map((item, index) => (
-            <div key={index} className="flex items-center space-x-3">
-              <span className="text-sm font-medium text-foreground w-16">{item.name}</span>
-              <div className="flex-1 bg-muted rounded-full h-6 relative">
+            <div key={index} className="flex items-center space-x-4">
+              <span className="text-sm font-medium text-foreground w-20">{item.name}</span>
+              <div className="flex-1 bg-blue-200 rounded-sm h-8 relative overflow-hidden">
                 <div 
-                  className={`${item.color} h-6 rounded-full transition-all duration-1000 ease-out`}
+                  className="bg-blue-500 h-8 rounded-sm transition-all duration-1000 ease-out animate-fade-in"
                   style={{ width: `${item.value}%` }}
                 />
               </div>
