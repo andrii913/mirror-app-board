@@ -35,45 +35,52 @@ export const ChartSection = () => {
         </div>
       </div>
 
-      {/* Gap Gaps Closed by Gap Type */}
+      {/* Care Gaps Closed by Gap Type */}
       <div className="bg-card rounded-lg border border-border p-6">
         <h3 className="text-lg font-semibold text-foreground mb-6">
           Care Gaps Closed<br />by Gap Type
         </h3>
         
-        <div className="space-y-4">
-          {gapTypeData.map((item, index) => (
-            <div key={index} className="flex items-center space-x-3">
-              <span className="text-sm font-medium text-foreground w-20">{item.name}</span>
-              <div className="flex-1 bg-muted rounded-full h-4 relative">
-                <div 
-                  className={`${item.color} h-4 rounded-full transition-all duration-1000 ease-out`}
-                  style={{ width: `${item.value}%` }}
-                />
+        <div className="flex items-center gap-8">
+          {/* Left side - Horizontal bars */}
+          <div className="flex-1 space-y-4">
+            {gapTypeData.map((item, index) => (
+              <div key={index} className="flex items-center space-x-4">
+                <span className="text-sm font-medium text-foreground w-20 text-left">{item.name}</span>
+                <div className="w-32 bg-blue-200 rounded-sm h-6 relative overflow-hidden">
+                  <div 
+                    className="bg-blue-500 h-6 rounded-sm transition-all duration-1000 ease-out animate-fade-in"
+                    style={{ width: `${item.value}%` }}
+                  />
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
+
+          {/* Right side - Curved line chart */}
+          <div className="relative w-32 h-32 bg-blue-50 rounded-lg">
+            <svg 
+              className="w-full h-full" 
+              viewBox="0 0 120 120"
+              fill="none"
+            >
+              {/* Curved trending line */}
+              <path
+                d="M15 90 Q30 85 45 70 Q60 55 75 45 Q90 35 105 25"
+                stroke="#0ea5e9"
+                strokeWidth="3"
+                fill="none"
+                className="transition-all duration-1000 ease-out animate-fade-in"
+              />
+              {/* End point circle */}
+              <circle cx="105" cy="25" r="3" fill="#0ea5e9" className="animate-scale-in" />
+            </svg>
+          </div>
         </div>
 
-        {/* Trending line chart placeholder */}
-        <div className="mt-8 relative h-20 bg-accent/20 rounded-lg p-4">
-          <svg 
-            className="w-full h-full" 
-            viewBox="0 0 300 60"
-            fill="none"
-          >
-            <path
-              d="M20 40 L80 35 L140 25 L200 20 L260 15"
-              stroke="hsl(var(--primary))"
-              strokeWidth="2"
-              fill="none"
-              className="transition-all duration-1000 ease-out"
-            />
-            <circle cx="260" cy="15" r="3" fill="hsl(var(--primary))" />
-          </svg>
-          <div className="absolute bottom-2 right-4 text-xs text-muted-foreground">
-            Gap Closure rate
-          </div>
+        {/* Gap Closure rate label */}
+        <div className="mt-4 text-center">
+          <div className="text-xs text-muted-foreground">Gap Closure rate</div>
         </div>
       </div>
     </div>
