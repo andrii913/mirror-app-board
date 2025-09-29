@@ -55,15 +55,11 @@ export const ChartSection = () => {
           ))}
           
           {/* Line chart using CSS - positioned below status bars */}
-          <div className="absolute inset-0 w-full h-full pointer-events-none">
+          <div className="absolute inset-0 -b-4 w-full h-full pointer-events-none">
             {/* Data points positioned at start and end of each status bar, slightly below */}
-            <div className="absolute w-3 h-3 bg-red-500 rounded-full animate-scale-in" style={{ left: '20%', top: '10px' }} />
             <div className="absolute w-3 h-3 bg-red-500 rounded-full animate-scale-in" style={{ left: '75%', top: '10px' }} />
-            <div className="absolute w-3 h-3 bg-red-500 rounded-full animate-scale-in" style={{ left: '20%', top: '42px' }} />
             <div className="absolute w-3 h-3 bg-red-500 rounded-full animate-scale-in" style={{ left: '55%', top: '42px' }} />
-            <div className="absolute w-3 h-3 bg-red-500 rounded-full animate-scale-in" style={{ left: '20%', top: '74px' }} />
             <div className="absolute w-3 h-3 bg-red-500 rounded-full animate-scale-in" style={{ left: '35%', top: '74px' }} />
-            <div className="absolute w-3 h-3 bg-red-500 rounded-full animate-scale-in" style={{ left: '20%', top: '106px' }} />
             <div className="absolute w-3 h-3 bg-red-500 rounded-full animate-scale-in" style={{ left: '25%', top: '106px' }} />
             
             {/* Line segments connecting the points */}
