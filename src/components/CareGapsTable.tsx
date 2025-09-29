@@ -1,3 +1,5 @@
+import { Table, TableHeader, TableBody, TableHead, TableRow, TableCell } from "@/components/ui/table";
+
 export const CareGapsTable = () => {
   const tableData = [
     {
@@ -29,8 +31,9 @@ export const CareGapsTable = () => {
     <div className="bg-card rounded-lg border border-border p-6 w-full">
       <h3 className="text-lg font-semibold text-foreground mb-6">Care Gaps Closed</h3>
       
-      <div className="overflow-x-auto">
-        <table className="w-full table-fixed">
+      <div className="space-y-8">
+        {/* Main table */}
+        <Table>
           <colgroup>
             <col className="w-1/5" />
             <col className="w-1/5" />
@@ -38,87 +41,83 @@ export const CareGapsTable = () => {
             <col className="w-1/5" />
             <col className="w-1/5" />
           </colgroup>
-          <thead>
-            <tr className="bg-muted/30">
-              <th className="text-left p-4 text-sm font-medium text-muted-foreground border-r border-border">Total Members</th>
-              <th className="text-left p-4 text-sm font-medium text-muted-foreground border-r border-border">Gaps Identified</th>
-              <th className="text-left p-4 text-sm font-medium text-muted-foreground border-r border-border">Closure Rate %</th>
-              <th className="text-left p-4 text-sm font-medium text-muted-foreground border-r border-border">M&adj%</th>
-              <th className="text-left p-4 text-sm font-medium text-muted-foreground">reime %</th>
-            </tr>
-          </thead>
-          <tbody>
+          <TableHeader>
+            <TableRow className="bg-muted/30">
+              <TableHead>Total Members</TableHead>
+              <TableHead>Gaps Identified</TableHead>
+              <TableHead>Closure Rate %</TableHead>
+              <TableHead>M&adj%</TableHead>
+              <TableHead>reime %</TableHead>
+            </TableRow>
+          </TableHeader>
+          <TableBody>
             {tableData.map((row, index) => (
-              <tr key={index} className="border-t border-border h-12">
-                <td className="p-4 text-sm font-medium text-foreground border-r border-border">{row.totalMembers}</td>
-                <td className="p-4 text-sm text-foreground border-r border-border">{row.gapsIdentified}</td>
-                <td className="p-4 text-sm text-foreground border-r border-border">{row.closureRate}</td>
-                <td className="p-4 text-sm font-semibold text-foreground border-r border-border">{row.percentage}</td>
-                <td className="p-4 text-sm text-foreground"></td>
-              </tr>
+              <TableRow key={index} className="border-t border-border">
+                <TableCell className="font-medium">{row.totalMembers}</TableCell>
+                <TableCell className="font-normal">{row.gapsIdentified}</TableCell>
+                <TableCell className="font-normal">{row.closureRate}</TableCell>
+                <TableCell>{row.percentage}</TableCell>
+                <TableCell></TableCell>
+              </TableRow>
             ))}
-          </tbody>
-        </table>
+          </TableBody>
+        </Table>
 
         {/* Performance metrics table */}
-        <div className="mt-8">
-          <table className="w-full table-fixed">
-            <colgroup>
-              <col className="w-1/4" />
-              <col className="w-1/4" />
-              <col className="w-1/4" />
-              <col className="w-1/4" />
-            </colgroup>
-            <thead>
-              <tr>
-                <th className="text-left p-4 text-sm font-medium text-muted-foreground">HealAAgeluJB%</th>
-                <th className="text-left p-4 text-sm font-medium text-muted-foreground">HIA</th>
-                <th className="text-left p-4 text-sm font-medium text-muted-foreground">Heterals</th>
-                <th className="text-left p-4 text-sm font-medium text-muted-foreground">Comp %</th>
-              </tr>
-            </thead>
-            <tbody>
-              {performanceData.map((row, index) => (
-                <tr key={index} className="h-12">
-                  <td className="p-4 text-sm font-semibold text-foreground">{row.metric1}</td>
-                  <td className="p-4 text-sm font-semibold text-foreground">{row.metric2}</td>
-                  <td className="p-4 text-sm font-semibold text-foreground">{row.metric3}</td>
-                  <td className="p-4 text-sm font-semibold text-foreground">{row.metric4}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
+        <Table>
+          <colgroup>
+            <col className="w-1/4" />
+            <col className="w-1/4" />
+            <col className="w-1/4" />
+            <col className="w-1/4" />
+          </colgroup>
+          <TableHeader>
+            <TableRow>
+              <TableHead>HealAAgeluJB%</TableHead>
+              <TableHead>HIA</TableHead>
+              <TableHead>Heterals</TableHead>
+              <TableHead>Comp %</TableHead>
+            </TableRow>
+          </TableHeader>
+          <TableBody>
+            {performanceData.map((row, index) => (
+              <TableRow key={index}>
+                <TableCell>{row.metric1}</TableCell>
+                <TableCell>{row.metric2}</TableCell>
+                <TableCell>{row.metric3}</TableCell>
+                <TableCell>{row.metric4}</TableCell>
+              </TableRow>
+            ))}
+          </TableBody>
+        </Table>
 
-        {/* Bottom metrics */}
-        <div className="mt-4">
-          <table className="w-full table-fixed">
-            <colgroup>
-              <col className="w-1/4" />
-              <col className="w-1/4" />
-              <col className="w-1/4" />
-              <col className="w-1/4" />
-            </colgroup>
-            <thead>
-              <tr>
-                <th className="text-left p-4 text-sm font-medium text-muted-foreground">(MR) c%</th>
-                <th className="text-left p-4 text-sm font-medium text-muted-foreground">CAP</th>
-                <th className="text-left p-4 text-sm font-medium text-muted-foreground">RFR%</th>
-                <th className="text-left p-4 text-sm font-medium text-muted-foreground">Comp %</th>
-              </tr>
-            </thead>
-            <tbody>
-              {bottomData.map((row, index) => (
-                <tr key={index} className="h-12">
-                  <td className="p-4 text-sm font-semibold text-foreground">{row.metric1}</td>
-                  <td className="p-4 text-sm font-semibold text-foreground">{row.metric2}</td>
-                  <td className="p-4 text-sm font-semibold text-foreground">{row.metric3}</td>
-                  <td className="p-4 text-sm font-semibold text-foreground">{row.metric4}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
+        {/* Bottom metrics table */}
+        <Table>
+          <colgroup>
+            <col className="w-1/4" />
+            <col className="w-1/4" />
+            <col className="w-1/4" />
+            <col className="w-1/4" />
+          </colgroup>
+          <TableHeader>
+            <TableRow>
+              <TableHead>(MR) c%</TableHead>
+              <TableHead>CAP</TableHead>
+              <TableHead>RFR%</TableHead>
+              <TableHead>Comp %</TableHead>
+            </TableRow>
+          </TableHeader>
+          <TableBody>
+            {bottomData.map((row, index) => (
+              <TableRow key={index}>
+                <TableCell>{row.metric1}</TableCell>
+                <TableCell>{row.metric2}</TableCell>
+                <TableCell>{row.metric3}</TableCell>
+                <TableCell>{row.metric4}</TableCell>
+              </TableRow>
+            ))}
+          </TableBody>
+        </Table>
       </div>
     </div>
   );
