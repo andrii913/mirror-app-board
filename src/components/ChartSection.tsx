@@ -55,7 +55,7 @@ export const ChartSection = () => {
           ))}
           
           {/* Line chart positioned over status bars only */}
-          <div className="absolute top-0 pointer-events-none" style={{ left: 'calc(5rem + 1rem)', right: '0', height: '100%' }}>
+          <div className="absolute top-8 pointer-events-none" style={{ left: 'calc(5rem + 1rem)', right: '0', height: '100%' }}>
             <svg 
               className="w-full h-full"
               viewBox="0 0 100 100"
