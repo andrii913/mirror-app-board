@@ -55,7 +55,7 @@ export const ChartSection = () => {
           ))}
           
           {/* Line chart using CSS - positioned below status bars */}
-          <div className="absolute inset-0 top-8 flex justify-end w-full h-full pointer-events-none">
+          <div className="absolute inset-0 top-8 flex text-right justify-end w-full h-full pointer-events-none">
             {/* Data points positioned at start and end of each status bar, slightly below */}
             <div className="absolute w-3 h-3 bg-red-500 rounded-full animate-scale-in" style={{ left: '75%', top: '10px' }} />
             <div className="absolute w-3 h-3 bg-red-500 rounded-full animate-scale-in" style={{ left: '55%', top: '42px' }} />
