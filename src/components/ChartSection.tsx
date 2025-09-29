@@ -41,7 +41,7 @@ export const ChartSection = () => {
           Care Gaps Closed<br />by Gap Type
         </h3>
         
-        <div className="space-y-4">
+        <div className="space-y-4 relative">
           {gapTypeData.map((item, index) => (
             <div key={index} className="flex items-center space-x-4">
               <span className="text-sm font-medium text-foreground w-20 text-left">{item.name}</span>
@@ -54,25 +54,26 @@ export const ChartSection = () => {
             </div>
           ))}
           
-          {/* Line chart overlaid in the same area */}
-          <div className="relative mt-6 h-32">
-            <svg 
-              className="absolute inset-0 w-full h-full" 
-              viewBox="0 0 300 120"
+          {/* Line chart overlaid on status bars */}
+          <svg 
+            className="absolute inset-0 w-full h-full pointer-events-none" 
+            viewBox="0 0 100 100"
+            fill="none"
+          >
+            {/* Line connecting the end points of each status bar */}
+            <path
+              d="M 75 12.5 L 55 37.5 L 35 62.5 L 25 87.5"
+              stroke="#1e40af"
+              strokeWidth="2"
               fill="none"
-            >
-              {/* Curved trending line */}
-              <path
-                d="M50 90 Q100 85 150 70 Q200 55 250 40"
-                stroke="#0ea5e9"
-                strokeWidth="3"
-                fill="none"
-                className="transition-all duration-1000 ease-out animate-fade-in"
-              />
-              {/* End point circle */}
-              <circle cx="250" cy="40" r="4" fill="#0ea5e9" className="animate-scale-in" />
-            </svg>
-          </div>
+              className="transition-all duration-1000 ease-out animate-fade-in"
+            />
+            {/* Points at each bar end */}
+            <circle cx="75" cy="12.5" r="2" fill="#1e40af" className="animate-scale-in" />
+            <circle cx="55" cy="37.5" r="2" fill="#1e40af" className="animate-scale-in" />
+            <circle cx="35" cy="62.5" r="2" fill="#1e40af" className="animate-scale-in" />
+            <circle cx="25" cy="87.5" r="2" fill="#1e40af" className="animate-scale-in" />
+          </svg>
         </div>
 
         {/* Gap Closure rate label */}
