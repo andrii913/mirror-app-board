@@ -63,13 +63,13 @@ export const ChartSection = () => {
             {/* Curved line following the red line path from bottom-left to top-right */}
             <path
               d="M 10 85 Q 40 75 60 45 Q 75 25 90 15"
-              stroke="#ef4444"
+              stroke="#0ea5e9"
               strokeWidth="3"
               fill="none"
               className="transition-all duration-1000 ease-out animate-fade-in"
             />
             {/* End point circle */}
-            <circle cx="90" cy="15" r="3" fill="#ef4444" className="animate-scale-in" />
+            <circle cx="90" cy="15" r="3" fill="#0ea5e9" className="animate-scale-in" />
           </svg>
         </div>
 
