@@ -64,14 +64,14 @@ export const ChartSection = () => {
             >
               {/* Line connecting data points at 75%, 55%, 35%, 25% */}
               <polyline
-                points="0,30 33,45 66,65 100,75"
+                points="0,25 33,45 66,65 100,75"
                 stroke="#ef4444"
                 strokeWidth="2"
                 fill="none"
                 className="transition-all duration-1000 ease-out animate-fade-in"
               />
               {/* Data point circles */}
-              <circle cx="0" cy="30" r="2" fill="#ef4444" className="animate-scale-in" />
+              <circle cx="0" cy="25" r="2" fill="#ef4444" className="animate-scale-in" />
               <circle cx="33" cy="45" r="2" fill="#ef4444" className="animate-scale-in" />
               <circle cx="66" cy="65" r="2" fill="#ef4444" className="animate-scale-in" />
               <circle cx="100" cy="75" r="2" fill="#ef4444" className="animate-scale-in" />
