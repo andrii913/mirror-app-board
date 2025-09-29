@@ -38,7 +38,7 @@ export const ChartSection = () => {
       {/* Gap Gaps Closed by Gap Type */}
       <div className="bg-card rounded-lg border border-border p-6">
         <h3 className="text-lg font-semibold text-foreground mb-6">
-          Gap Gaps Closed<br />by Gap Type
+          Care Gaps Closed<br />by Gap Type
         </h3>
         
         <div className="space-y-4">

@@ -51,6 +51,7 @@ export const MetricsCards = () => {
       <div className="bg-card rounded-lg p-6 border border-border">
         <div className="text-center">
           <div className="text-4xl font-bold text-foreground mb-2">$18.9M</div>
+          <div className="text-sm text-muted-foreground">Revenue</div>
         </div>
       </div>
     </div>

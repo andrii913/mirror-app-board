@@ -46,7 +46,7 @@ export const CareGapsTable = () => {
               <TableHead>Total Members</TableHead>
               <TableHead>Gaps Identified</TableHead>
               <TableHead>Closure Rate %</TableHead>
-              <TableHead>M&adj%</TableHead>
+              <TableHead>M&Adj%</TableHead>
               <TableHead>Prime %</TableHead>
             </TableRow>
           </TableHeader>
@@ -101,7 +101,7 @@ export const CareGapsTable = () => {
           </colgroup>
           <TableHeader>
             <TableRow>
-              <TableHead>(MR) c%</TableHead>
+              <TableHead>(MR) C%</TableHead>
               <TableHead>CAP</TableHead>
               <TableHead>RFR%</TableHead>
               <TableHead>Comp %</TableHead>
