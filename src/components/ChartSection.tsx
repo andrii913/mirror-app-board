@@ -41,39 +41,36 @@ export const ChartSection = () => {
           Care Gaps Closed<br />by Gap Type
         </h3>
         
-        <div className="flex items-center gap-8">
-          {/* Left side - Horizontal bars */}
-          <div className="flex-1 space-y-4">
-            {gapTypeData.map((item, index) => (
-              <div key={index} className="flex items-center space-x-4">
-                <span className="text-sm font-medium text-foreground w-20 text-left">{item.name}</span>
-                <div className="w-32 bg-blue-200 rounded-sm h-6 relative overflow-hidden">
-                  <div 
-                    className="bg-blue-500 h-6 rounded-sm transition-all duration-1000 ease-out animate-fade-in"
-                    style={{ width: `${item.value}%` }}
-                  />
-                </div>
+        <div className="space-y-4">
+          {gapTypeData.map((item, index) => (
+            <div key={index} className="flex items-center space-x-4">
+              <span className="text-sm font-medium text-foreground w-20 text-left">{item.name}</span>
+              <div className="flex-1 bg-blue-200 rounded-sm h-6 relative overflow-hidden">
+                <div 
+                  className="bg-blue-500 h-6 rounded-sm transition-all duration-1000 ease-out animate-fade-in"
+                  style={{ width: `${item.value}%` }}
+                />
               </div>
-            ))}
-          </div>
-
-          {/* Right side - Curved line chart */}
-          <div className="relative w-32 h-32 bg-blue-50 rounded-lg">
+            </div>
+          ))}
+          
+          {/* Line chart overlaid in the same area */}
+          <div className="relative mt-6 h-32">
             <svg 
-              className="w-full h-full" 
-              viewBox="0 0 120 120"
+              className="absolute inset-0 w-full h-full" 
+              viewBox="0 0 300 120"
               fill="none"
             >
               {/* Curved trending line */}
               <path
-                d="M15 90 Q30 85 45 70 Q60 55 75 45 Q90 35 105 25"
+                d="M50 90 Q100 85 150 70 Q200 55 250 40"
                 stroke="#0ea5e9"
                 strokeWidth="3"
                 fill="none"
                 className="transition-all duration-1000 ease-out animate-fade-in"
               />
               {/* End point circle */}
-              <circle cx="105" cy="25" r="3" fill="#0ea5e9" className="animate-scale-in" />
+              <circle cx="250" cy="40" r="4" fill="#0ea5e9" className="animate-scale-in" />
             </svg>
           </div>
         </div>
