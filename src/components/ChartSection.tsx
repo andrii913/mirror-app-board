@@ -54,25 +54,23 @@ export const ChartSection = () => {
             </div>
           ))}
           
-          {/* SVG Line chart - positioned below status bars */}
-          <div className="absolute inset-0 top-8 w-full h-full pointer-events-none">
-            <svg width="100%" height="100%" className="absolute inset-0">
-              {/* Line path connecting all points */}
-              <path
-                d="M 75% 16 L 55% 48 L 35% 80 L 25% 112"
-                stroke="#ef4444"
-                strokeWidth="2"
-                fill="none"
-                className="animate-fade-in"
-              />
-              
-              {/* Data points */}
-              <circle cx="75%" cy="16" r="6" fill="#ef4444" className="animate-scale-in" />
-              <circle cx="55%" cy="48" r="6" fill="#ef4444" className="animate-scale-in" />
-              <circle cx="35%" cy="80" r="6" fill="#ef4444" className="animate-scale-in" />
-              <circle cx="25%" cy="112" r="6" fill="#ef4444" className="animate-scale-in" />
-            </svg>
-          </div>
+          {/* Line chart following the red line path */}
+          <svg 
+            className="absolute inset-0 w-full h-full pointer-events-none" 
+            viewBox="0 0 100 100"
+            fill="none"
+          >
+            {/* Curved line following the red line path from bottom-left to top-right */}
+            <path
+              d="M 10 85 Q 40 75 60 45 Q 75 25 90 15"
+              stroke="#0ea5e9"
+              strokeWidth="3"
+              fill="none"
+              className="transition-all duration-1000 ease-out animate-fade-in"
+            />
+            {/* End point circle */}
+            <circle cx="90" cy="15" r="3" fill="#0ea5e9" className="animate-scale-in" />
+          </svg>
         </div>
 
         {/* Gap Closure rate label */}
