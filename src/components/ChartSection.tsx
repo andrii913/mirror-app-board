@@ -71,7 +71,7 @@ export const ChartSection = () => {
                 className="transition-all duration-1000 ease-out animate-fade-in"
               />
               {/* Data point circles */}
-              <circle cx="5" cy="75" r="2" fill="#0ea5e9" className="animate-scale-in" />
+              <circle cx="95" cy="25" r="2" fill="#0ea5e9" className="animate-scale-in" />
             </svg>
           </div>
         </div>
