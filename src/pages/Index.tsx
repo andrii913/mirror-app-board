@@ -1,11 +1,36 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { DashboardHeader } from "@/components/DashboardHeader";
+import { MetricsCards } from "@/components/MetricsCards";
+import { Sidebar } from "@/components/Sidebar";
+import { CareGapsTable } from "@/components/CareGapsTable";
+import { ChartSection } from "@/components/ChartSection";
 
 const Index = () => {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="mb-4 text-4xl font-bold">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
+    <div className="min-h-screen bg-background">
+      <DashboardHeader />
+      
+      <div className="flex">
+        {/* Sidebar */}
+        <div className="w-80 min-h-screen">
+          <Sidebar />
+        </div>
+        
+        {/* Main Content */}
+        <div className="flex-1 p-6">
+          <MetricsCards />
+          
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+            {/* Table Section */}
+            <div className="lg:col-span-2">
+              <CareGapsTable />
+            </div>
+            
+            {/* Charts Section */}
+            <div className="lg:col-span-1">
+              <ChartSection />
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );

@@ -22,6 +22,8 @@ export default {
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
+          light: "hsl(var(--primary-light))",
+          lighter: "hsl(var(--primary-lighter))",
         },
         secondary: {
           DEFAULT: "hsl(var(--secondary))",
@@ -57,6 +59,13 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
+        dashboard: {
+          header: "hsl(var(--dashboard-header))",
+          sidebar: "hsl(var(--dashboard-sidebar))",
+          "table-header": "hsl(var(--table-header))",
+        },
+        success: "hsl(var(--success))",
+        warning: "hsl(var(--warning))",
       },
       borderRadius: {
         lg: "var(--radius)",
