@@ -55,7 +55,7 @@ export const ChartSection = () => {
           ))}
           
           {/* Line chart following the red line path */}
-          <div className="absolute top-8 inset-0 w-full h-full pointer-events-none">
+          <div className="absolute top-0 inset-0 w-full h-full pointer-events-none">
             <svg 
               viewBox="0 0 100 100"
               fill="none"
