@@ -54,22 +54,27 @@ export const ChartSection = () => {
             </div>
           ))}
           
-          {/* Line chart following the red line path */}
-          <div className="absolute top-0 inset-0 w-full h-full pointer-events-none">
+          {/* Line chart positioned over status bars only */}
+          <div className="absolute top-0 pointer-events-none" style={{ left: 'calc(5rem + 1rem)', right: '0', height: '100%' }}>
             <svg 
+              className="w-full h-full"
               viewBox="0 0 100 100"
+              preserveAspectRatio="none"
               fill="none"
             >
-              {/* Curved line following the red line path from bottom-left to top-right */}
-              <path
-                d="M 10 85 Q 40 75 60 45 Q 75 25 90 15"
-                stroke="#0ea5e9"
-                strokeWidth="3"
+              {/* Line connecting data points at 75%, 55%, 35%, 25% */}
+              <polyline
+                points="0,30 33,45 66,65 100,75"
+                stroke="#ef4444"
+                strokeWidth="2"
                 fill="none"
                 className="transition-all duration-1000 ease-out animate-fade-in"
               />
-              {/* End point circle */}
-              <circle cx="90" cy="15" r="3" fill="#0ea5e9" className="animate-scale-in" />
+              {/* Data point circles */}
+              <circle cx="0" cy="30" r="2" fill="#ef4444" className="animate-scale-in" />
+              <circle cx="33" cy="45" r="2" fill="#ef4444" className="animate-scale-in" />
+              <circle cx="66" cy="65" r="2" fill="#ef4444" className="animate-scale-in" />
+              <circle cx="100" cy="75" r="2" fill="#ef4444" className="animate-scale-in" />
             </svg>
           </div>
         </div>
