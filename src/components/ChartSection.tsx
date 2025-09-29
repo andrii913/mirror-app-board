@@ -54,77 +54,24 @@ export const ChartSection = () => {
             </div>
           ))}
           
-          {/* Line chart using CSS - positioned below status bars */}
-          <div className="absolute inset-0 top-8 flex text-right justify-end w-full h-full pointer-events-none">
-            {/* Data points positioned at start and end of each status bar, slightly below */}
-            <div className="absolute w-3 h-3 bg-red-500 rounded-full animate-scale-in" style={{ left: '75%', top: '10px' }} />
-            <div className="absolute w-3 h-3 bg-red-500 rounded-full animate-scale-in" style={{ left: '55%', top: '42px' }} />
-            <div className="absolute w-3 h-3 bg-red-500 rounded-full animate-scale-in" style={{ left: '35%', top: '74px' }} />
-            <div className="absolute w-3 h-3 bg-red-500 rounded-full animate-scale-in" style={{ left: '25%', top: '106px' }} />
-            
-            {/* Line segments connecting the points */}
-            <div 
-              className="absolute border-t-2 border-red-500 origin-left animate-fade-in"
-              style={{ 
-                left: '20%', 
-                top: '11px', 
-                width: '55%', 
-                transform: 'rotate(0deg)'
-              }}
-            />
-            <div 
-              className="absolute border-t-2 border-red-500 origin-left animate-fade-in"
-              style={{ 
-                left: '20%', 
-                top: '43px', 
-                width: '35%', 
-                transform: 'rotate(0deg)'
-              }}
-            />
-            <div 
-              className="absolute border-t-2 border-red-500 origin-left animate-fade-in"
-              style={{ 
-                left: '20%', 
-                top: '75px', 
-                width: '15%', 
-                transform: 'rotate(0deg)'
-              }}
-            />
-            <div 
-              className="absolute border-t-2 border-red-500 origin-left animate-fade-in"
-              style={{ 
-                left: '20%', 
-                top: '107px', 
-                width: '5%', 
-                transform: 'rotate(0deg)'
-              }}
-            />
-            
-            {/* Connecting vertical lines between rows */}
-            <div 
-              className="absolute border-l-2 border-red-500 animate-fade-in"
-              style={{ 
-                left: '75%', 
-                top: '11px', 
-                height: '32px'
-              }}
-            />
-            <div 
-              className="absolute border-l-2 border-red-500 animate-fade-in"
-              style={{ 
-                left: '55%', 
-                top: '43px', 
-                height: '32px'
-              }}
-            />
-            <div 
-              className="absolute border-l-2 border-red-500 animate-fade-in"
-              style={{ 
-                left: '35%', 
-                top: '75px', 
-                height: '32px'
-              }}
-            />
+          {/* SVG Line chart - positioned below status bars */}
+          <div className="absolute inset-0 top-8 w-full h-full pointer-events-none">
+            <svg width="100%" height="100%" className="absolute inset-0">
+              {/* Line path connecting all points */}
+              <path
+                d="M 75% 16 L 55% 48 L 35% 80 L 25% 112"
+                stroke="#ef4444"
+                strokeWidth="2"
+                fill="none"
+                className="animate-fade-in"
+              />
+              
+              {/* Data points */}
+              <circle cx="75%" cy="16" r="6" fill="#ef4444" className="animate-scale-in" />
+              <circle cx="55%" cy="48" r="6" fill="#ef4444" className="animate-scale-in" />
+              <circle cx="35%" cy="80" r="6" fill="#ef4444" className="animate-scale-in" />
+              <circle cx="25%" cy="112" r="6" fill="#ef4444" className="animate-scale-in" />
+            </svg>
           </div>
         </div>
 
