@@ -54,40 +54,79 @@ export const ChartSection = () => {
             </div>
           ))}
           
-          {/* Line chart using CSS */}
+          {/* Line chart using CSS - positioned below status bars */}
           <div className="absolute inset-0 w-full h-full pointer-events-none">
-            {/* Data points positioned to align with bars */}
-            <div className="absolute w-3 h-3 bg-red-500 rounded-full animate-scale-in" style={{ left: '10%', bottom: '15%' }} />
-            <div className="absolute w-3 h-3 bg-red-500 rounded-full animate-scale-in" style={{ left: '40%', bottom: '25%' }} />
-            <div className="absolute w-3 h-3 bg-red-500 rounded-full animate-scale-in" style={{ left: '60%', bottom: '55%' }} />
-            <div className="absolute w-3 h-3 bg-red-500 rounded-full animate-scale-in" style={{ left: '90%', bottom: '85%' }} />
+            {/* Data points positioned at start and end of each status bar, slightly below */}
+            <div className="absolute w-3 h-3 bg-red-500 rounded-full animate-scale-in" style={{ left: '20%', top: '10px' }} />
+            <div className="absolute w-3 h-3 bg-red-500 rounded-full animate-scale-in" style={{ left: '75%', top: '10px' }} />
+            <div className="absolute w-3 h-3 bg-red-500 rounded-full animate-scale-in" style={{ left: '20%', top: '42px' }} />
+            <div className="absolute w-3 h-3 bg-red-500 rounded-full animate-scale-in" style={{ left: '55%', top: '42px' }} />
+            <div className="absolute w-3 h-3 bg-red-500 rounded-full animate-scale-in" style={{ left: '20%', top: '74px' }} />
+            <div className="absolute w-3 h-3 bg-red-500 rounded-full animate-scale-in" style={{ left: '35%', top: '74px' }} />
+            <div className="absolute w-3 h-3 bg-red-500 rounded-full animate-scale-in" style={{ left: '20%', top: '106px' }} />
+            <div className="absolute w-3 h-3 bg-red-500 rounded-full animate-scale-in" style={{ left: '25%', top: '106px' }} />
             
             {/* Line segments connecting the points */}
             <div 
               className="absolute border-t-2 border-red-500 origin-left animate-fade-in"
               style={{ 
-                left: '10%', 
-                bottom: '15%', 
-                width: '32%', 
-                transform: 'rotate(8deg) translateY(-1px)'
+                left: '20%', 
+                top: '11px', 
+                width: '55%', 
+                transform: 'rotate(0deg)'
               }}
             />
             <div 
               className="absolute border-t-2 border-red-500 origin-left animate-fade-in"
               style={{ 
-                left: '40%', 
-                bottom: '25%', 
-                width: '25%', 
-                transform: 'rotate(35deg) translateY(-1px)'
+                left: '20%', 
+                top: '43px', 
+                width: '35%', 
+                transform: 'rotate(0deg)'
               }}
             />
             <div 
               className="absolute border-t-2 border-red-500 origin-left animate-fade-in"
               style={{ 
-                left: '60%', 
-                bottom: '55%', 
-                width: '36%', 
-                transform: 'rotate(25deg) translateY(-1px)'
+                left: '20%', 
+                top: '75px', 
+                width: '15%', 
+                transform: 'rotate(0deg)'
+              }}
+            />
+            <div 
+              className="absolute border-t-2 border-red-500 origin-left animate-fade-in"
+              style={{ 
+                left: '20%', 
+                top: '107px', 
+                width: '5%', 
+                transform: 'rotate(0deg)'
+              }}
+            />
+            
+            {/* Connecting vertical lines between rows */}
+            <div 
+              className="absolute border-l-2 border-red-500 animate-fade-in"
+              style={{ 
+                left: '75%', 
+                top: '11px', 
+                height: '32px'
+              }}
+            />
+            <div 
+              className="absolute border-l-2 border-red-500 animate-fade-in"
+              style={{ 
+                left: '55%', 
+                top: '43px', 
+                height: '32px'
+              }}
+            />
+            <div 
+              className="absolute border-l-2 border-red-500 animate-fade-in"
+              style={{ 
+                left: '35%', 
+                top: '75px', 
+                height: '32px'
               }}
             />
           </div>
