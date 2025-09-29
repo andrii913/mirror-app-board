@@ -55,22 +55,23 @@ export const ChartSection = () => {
           ))}
           
           {/* Line chart following the red line path */}
-          <svg 
-            className="absolute inset-0 w-full h-full pointer-events-none" 
-            viewBox="0 0 100 100"
-            fill="none"
-          >
-            {/* Curved line following the red line path from bottom-left to top-right */}
-            <path
-              d="M 10 85 Q 40 75 60 45 Q 75 25 90 15"
-              stroke="#0ea5e9"
-              strokeWidth="3"
+          <div className="absolute top-8 inset-0 w-full h-full pointer-events-none">
+            <svg 
+              viewBox="0 0 100 100"
               fill="none"
-              className="transition-all duration-1000 ease-out animate-fade-in"
-            />
-            {/* End point circle */}
-            <circle cx="90" cy="15" r="3" fill="#0ea5e9" className="animate-scale-in" />
-          </svg>
+            >
+              {/* Curved line following the red line path from bottom-left to top-right */}
+              <path
+                d="M 10 85 Q 40 75 60 45 Q 75 25 90 15"
+                stroke="#0ea5e9"
+                strokeWidth="3"
+                fill="none"
+                className="transition-all duration-1000 ease-out animate-fade-in"
+              />
+              {/* End point circle */}
+              <circle cx="90" cy="15" r="3" fill="#0ea5e9" className="animate-scale-in" />
+            </svg>
+          </div>
         </div>
 
         {/* Gap Closure rate label */}
