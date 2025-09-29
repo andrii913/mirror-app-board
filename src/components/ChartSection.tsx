@@ -54,22 +54,22 @@ export const ChartSection = () => {
             </div>
           ))}
           
-          {/* Line chart positioned to the right side */}
+          {/* Line chart following the red line path */}
           <svg 
-            className="absolute top-0 right-0 w-32 h-full pointer-events-none" 
-            viewBox="0 0 80 100"
+            className="absolute inset-0 w-full h-full pointer-events-none" 
+            viewBox="0 0 100 100"
             fill="none"
           >
-            {/* Curved line chart positioned to the right */}
+            {/* Curved line following the red line path from bottom-left to top-right */}
             <path
-              d="M 20 85 Q 35 75 45 60 Q 55 45 65 25"
-              stroke="#0ea5e9"
+              d="M 10 85 Q 40 75 60 45 Q 75 25 90 15"
+              stroke="#ef4444"
               strokeWidth="3"
               fill="none"
               className="transition-all duration-1000 ease-out animate-fade-in"
             />
             {/* End point circle */}
-            <circle cx="65" cy="25" r="3" fill="#0ea5e9" className="animate-scale-in" />
+            <circle cx="90" cy="15" r="3" fill="#ef4444" className="animate-scale-in" />
           </svg>
         </div>
 
