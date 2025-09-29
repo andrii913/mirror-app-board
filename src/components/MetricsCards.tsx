@@ -42,7 +42,7 @@ export const MetricsCards = () => {
           <div className="text-4xl font-bold text-foreground mb-2">243</div>
           <div className="text-sm text-muted-foreground">
             <div>Auditable</div>
-            <div>tquater</div>
+            <div>Quarter</div>
           </div>
         </div>
       </div>

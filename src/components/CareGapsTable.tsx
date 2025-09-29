@@ -47,7 +47,7 @@ export const CareGapsTable = () => {
               <TableHead>Gaps Identified</TableHead>
               <TableHead>Closure Rate %</TableHead>
               <TableHead>M&adj%</TableHead>
-              <TableHead>reime %</TableHead>
+              <TableHead>Prime %</TableHead>
             </TableRow>
           </TableHeader>
           <TableBody>
@@ -73,9 +73,9 @@ export const CareGapsTable = () => {
           </colgroup>
           <TableHeader>
             <TableRow className="bg-muted/30">
-              <TableHead>HealAAgeluJB%</TableHead>
+              <TableHead>Health Age %</TableHead>
               <TableHead>HIA</TableHead>
-              <TableHead>Heterals</TableHead>
+              <TableHead>Referrals</TableHead>
               <TableHead>Comp %</TableHead>
             </TableRow>
           </TableHeader>
