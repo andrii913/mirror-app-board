@@ -26,28 +26,35 @@ export const CareGapsTable = () => {
   ];
 
   return (
-    <div className="bg-card rounded-lg border border-border p-6">
+    <div className="bg-card rounded-lg border border-border p-6 w-full">
       <h3 className="text-lg font-semibold text-foreground mb-6">Care Gaps Closed</h3>
       
       <div className="overflow-x-auto">
-        <table className="w-full">
+        <table className="w-full table-fixed">
+          <colgroup>
+            <col className="w-1/5" />
+            <col className="w-1/5" />
+            <col className="w-1/5" />
+            <col className="w-1/5" />
+            <col className="w-1/5" />
+          </colgroup>
           <thead>
-            <tr className="bg-dashboard-table-header">
-              <th className="text-left p-3 text-sm font-medium text-muted-foreground">Total Members</th>
-              <th className="text-left p-3 text-sm font-medium text-muted-foreground">Gaps Identified</th>
-              <th className="text-left p-3 text-sm font-medium text-muted-foreground">Closure Rate %</th>
-              <th className="text-left p-3 text-sm font-medium text-muted-foreground">M&adj%</th>
-              <th className="text-left p-3 text-sm font-medium text-muted-foreground">reime %</th>
+            <tr className="bg-muted/30">
+              <th className="text-left p-4 text-sm font-medium text-muted-foreground border-r border-border">Total Members</th>
+              <th className="text-left p-4 text-sm font-medium text-muted-foreground border-r border-border">Gaps Identified</th>
+              <th className="text-left p-4 text-sm font-medium text-muted-foreground border-r border-border">Closure Rate %</th>
+              <th className="text-left p-4 text-sm font-medium text-muted-foreground border-r border-border">M&adj%</th>
+              <th className="text-left p-4 text-sm font-medium text-muted-foreground">reime %</th>
             </tr>
           </thead>
           <tbody>
             {tableData.map((row, index) => (
-              <tr key={index} className="border-t border-border">
-                <td className="p-3 text-sm font-medium text-foreground">{row.totalMembers}</td>
-                <td className="p-3 text-sm text-foreground">{row.gapsIdentified}</td>
-                <td className="p-3 text-sm text-foreground">{row.closureRate}</td>
-                <td className="p-3 text-sm font-semibold text-foreground">{row.percentage}</td>
-                <td className="p-3 text-sm text-foreground"></td>
+              <tr key={index} className="border-t border-border h-12">
+                <td className="p-4 text-sm font-medium text-foreground border-r border-border">{row.totalMembers}</td>
+                <td className="p-4 text-sm text-foreground border-r border-border">{row.gapsIdentified}</td>
+                <td className="p-4 text-sm text-foreground border-r border-border">{row.closureRate}</td>
+                <td className="p-4 text-sm font-semibold text-foreground border-r border-border">{row.percentage}</td>
+                <td className="p-4 text-sm text-foreground"></td>
               </tr>
             ))}
           </tbody>
