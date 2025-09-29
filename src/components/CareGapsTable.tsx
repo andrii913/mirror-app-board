@@ -72,7 +72,7 @@ export const CareGapsTable = () => {
             <col className="w-1/4" />
           </colgroup>
           <TableHeader>
-            <TableRow>
+            <TableRow className="bg-muted/30">
               <TableHead>HealAAgeluJB%</TableHead>
               <TableHead>HIA</TableHead>
               <TableHead>Heterals</TableHead>
@@ -81,7 +81,7 @@ export const CareGapsTable = () => {
           </TableHeader>
           <TableBody>
             {performanceData.map((row, index) => (
-              <TableRow key={index}>
+              <TableRow key={index} className="border-t border-border">
                 <TableCell>{row.metric1}</TableCell>
                 <TableCell>{row.metric2}</TableCell>
                 <TableCell>{row.metric3}</TableCell>
@@ -93,7 +93,7 @@ export const CareGapsTable = () => {
 
         {/* Bottom metrics table */}
         <Table>
-          <colgroup>
+          <colgroup className="bg-muted/30">
             <col className="w-1/4" />
             <col className="w-1/4" />
             <col className="w-1/4" />
@@ -109,7 +109,7 @@ export const CareGapsTable = () => {
           </TableHeader>
           <TableBody>
             {bottomData.map((row, index) => (
-              <TableRow key={index}>
+              <TableRow key={index} className="border-t border-border">
                 <TableCell>{row.metric1}</TableCell>
                 <TableCell>{row.metric2}</TableCell>
                 <TableCell>{row.metric3}</TableCell>
