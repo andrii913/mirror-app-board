@@ -65,16 +65,16 @@ export const ChartSection = () => {
               {/* Line connecting data points from 25% up to 75% */}
               <polyline
                 points="0,75 33,65 66,45 100,25"
-                stroke="#ef4444"
+                stroke="bg-primary"
                 strokeWidth="2"
                 fill="none"
                 className="transition-all duration-1000 ease-out animate-fade-in"
               />
               {/* Data point circles */}
-              <circle cx="0" cy="75" r="2" fill="#ef4444" className="animate-scale-in" />
-              <circle cx="33" cy="65" r="2" fill="#ef4444" className="animate-scale-in" />
-              <circle cx="66" cy="45" r="2" fill="#ef4444" className="animate-scale-in" />
-              <circle cx="100" cy="25" r="2" fill="#ef4444" className="animate-scale-in" />
+              <circle cx="0" cy="75" r="2" fill="bg-primary" className="animate-scale-in" />
+              <circle cx="33" cy="65" r="2" fill="bg-primary" className="animate-scale-in" />
+              <circle cx="66" cy="45" r="2" fill="bg-primary" className="animate-scale-in" />
+              <circle cx="100" cy="25" r="2" fill="bg-primary" className="animate-scale-in" />
             </svg>
           </div>
         </div>
