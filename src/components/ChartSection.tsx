@@ -55,7 +55,7 @@ export const ChartSection = () => {
           ))}
           
           {/* Curved line chart overlay */}
-          <div className="absolute inset-0 pointer-events-none" style={{ left: 'calc(5rem + 1rem)', right: '0' }}>
+          <div className="absolute inset-0 pointer-events-none" style={{ left: 'calc(5rem + 1rem)', right: '0', top: '16'}}>
             <svg 
               className="w-full h-full"
               viewBox="0 0 100 100"
@@ -72,9 +72,6 @@ export const ChartSection = () => {
               />
               {/* Data point circles */}
               <circle cx="10" cy="85" r="2.5" fill="#0ea5e9" className="animate-scale-in" />
-              <circle cx="30" cy="70" r="2.5" fill="#0ea5e9" className="animate-scale-in" />
-              <circle cx="60" cy="45" r="2.5" fill="#0ea5e9" className="animate-scale-in" />
-              <circle cx="90" cy="15" r="2.5" fill="#0ea5e9" className="animate-scale-in" />
             </svg>
           </div>
         </div>
