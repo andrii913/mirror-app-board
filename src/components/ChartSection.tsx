@@ -55,7 +55,7 @@ export const ChartSection = () => {
           ))}
           
           {/* Curved line chart overlay */}
-          <div className="absolute inset-0 pointer-events-none" style={{ left: 'calc(5rem + 1rem)', right: '0', top: "-3rem"}}>
+          <div className="absolute inset-0 pointer-events-none" style={{ left: 'calc(5rem + 1rem)', right: '0', bottom: "-3rem"}}>
             <svg 
               className="w-full h-full"
               viewBox="0 0 100 100"
